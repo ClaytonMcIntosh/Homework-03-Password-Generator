@@ -13,8 +13,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-let passwordLength = "";
-var longStringName = "";
 
 //function to generate the password. 
 function generatePassword(){
@@ -52,97 +50,17 @@ function generatePassword(){
     console.log(longStringName);
   }
   function passJumb(length, chars) {
-    var password = '';
-    for (var i = length; i > 0; --i) password += chars[Math.floor(Math.random() * chars.length)];
-    return password;
+    var passwordJ = '';
+    for (var i = length; i > 0; --i) passwordJ += chars[Math.floor(Math.random() * chars.length)];
+    return passwordJ;
   }
   pJumb = passJumb(passwordLength, longStringName);
   
  console.log(pJumb);
 
- 
+return pJumb
 
 }
-
-
-
-
-
-// function passJumb(length, chars) {
-//   var password = '';
-//   for (var i = length; i > 0; --i) password += chars[Math.floor(Math.random() * chars.length)];
-//   return password;
-// }
-// var pJumb = passJumb(128, longStringName);
-
-// console.log(pJumb);
-
-
-
-
-
-//Attempting to build a pool of characters for randomization
-
-// var randomString = "";
-// var lowerCaseV = "abcdefghijklmnopqrstuvwxyz";
-// var upperCaseV = "ABCDEFGHIJKLMNOPQRSTUVWXY";
-// var numbersV = "0123456789";
-// var specialCharV = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-
-// if (lowerCaseReq == true){
-// randomString.push(akjsdhfksajdfh)
-// console.log(randomString)
-// }
-
-
-
-
-//Attempting to build a function that will add a random character, and stop when it creates the length of the string (or array or whatever)
-
-
-// function createPass (x, y) {
-//   var resultofPass = '';
-//   for (var i = x; i > 0; --i) resultofPass += y[Math.floor(Math.random()) * chars.length];
-//   return resultofPass;
-// }
-// var passCreated = createPass (100, 'abcdefghijklmn')
-// console.log(createPass());
-
-
-
-
-// function passwordCreate(length) {
-//   var result = "";
-//   var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//   var characterLength = characters,length;
-//   for (var x = 0; x < length x++){
-//     result += characters.charAt(Math.floor(Math.random() * characterLength));
-//   }
-//   return result;
-
-// }
-//     console.log(passwordCreate.);
-
-
-
-// console.log(passwordLength);
-// var passwordTest = [0];
-// if (passwordLength.length() > passwordTest.length()){
-//   passwordTest.push();
-//   console.log(passwordTest);
-//  }
-
-
-// function createPass (x, y) {
-//   var resultofPass = "";
-//   for (var i = x; i > 0; --i) resultofPass += y[Math.floor(Math.random()) * y.length];
-//   return resultofPass;
-// }
-// var passCreated = createPass (128, "asdasd")
-
-// console.log(createPass());
-
-
 
 
 
