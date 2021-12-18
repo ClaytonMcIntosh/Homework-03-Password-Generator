@@ -51,7 +51,34 @@ function generatePassword(){
     longStringName = longStringName+"!@,#$%&*{}[]/+=";
     console.log(longStringName);
   }
+  function passJumb(length, chars) {
+    var password = '';
+    for (var i = length; i > 0; --i) password += chars[Math.floor(Math.random() * chars.length)];
+    return password;
+  }
+  pJumb = passJumb(passwordLength, longStringName);
+  
+ console.log(pJumb);
+
+ 
+
 }
+
+
+
+
+
+// function passJumb(length, chars) {
+//   var password = '';
+//   for (var i = length; i > 0; --i) password += chars[Math.floor(Math.random() * chars.length)];
+//   return password;
+// }
+// var pJumb = passJumb(128, longStringName);
+
+// console.log(pJumb);
+
+
+
 
 
 //Attempting to build a pool of characters for randomization
@@ -106,7 +133,14 @@ function generatePassword(){
 //  }
 
 
+// function createPass (x, y) {
+//   var resultofPass = "";
+//   for (var i = x; i > 0; --i) resultofPass += y[Math.floor(Math.random()) * y.length];
+//   return resultofPass;
+// }
+// var passCreated = createPass (128, "asdasd")
 
+// console.log(createPass());
 
 
 
