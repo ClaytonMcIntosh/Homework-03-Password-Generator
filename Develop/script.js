@@ -67,8 +67,7 @@ function stringGet(){
     if(specialReq === true){
     longStringName = longStringName+"!@,#$%&*{}/+=";
    }
-   console.log(longStringName);
-   return longStringName;
+     return longStringName;
   }
 
   //This funtion ensures at least one type of characters has been selected. It then takes the long string of characters created above and chooses random characters to create a password with the correct number of characters.
@@ -91,41 +90,32 @@ function passGet(x){
 
 //This function checks to see of each character set selected appears in the password. If not it generates a new password and tests again.
 function passwordRefined(x){
-  console.log(x);
     if (lowerCaseReq === true && /[a-z]/.test(x) || lowerCaseReq === false){
-    console.log("aa");
     }
     else {
-      console.log("aaaaaaaaaaa")
-      y = passGet(longStringName);
+       y = passGet(longStringName);
       passwordRefined(y);
       return y;   
     }
     if (upperCaseReq === true && /[A-Z]/.test(x) || upperCaseReq === false){
-      console.log("AA");
     }
     else {
-      console.log("AAAAAAAAAA")
       y = passGet(longStringName);
       passwordRefined(y);
       return y;   
     }
     if (numericReq === true && /[0-9]/.test(x) || numericReq === false){
-      console.log("11");
        }
     else {
-      console.log("111111111")
       y = passGet(longStringName);
       passwordRefined(y);
       return y;   
     }
     if (specialReq === true && /[!@,#$%&*{}/+=]/.test(x) || specialReq === false){
-      console.log("**");
       return x;
        }
     else {
-      console.log("!@,#$%&*{}/+=")
-      y = passGet(longStringName);
+       y = passGet(longStringName);
       passwordRefined(y);
       return y;   
     }
