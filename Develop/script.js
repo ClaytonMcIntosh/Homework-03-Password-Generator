@@ -14,21 +14,16 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-
+// A function to systematically create a password using a series of functions. Each function returns a value that passes to the next function.
 function generatePassword(){
-
   lengthP = lengthGet();
-
   stringP = stringGet(lengthP);
-
-  firstPass = passGet(stringP);
- 
+  firstPass = passGet(stringP); 
   refinedPass = passwordRefined(firstPass);
-
   return refinedPass;
-
  }
 
+// Variables declared so they can be accessed globally
 let lowerCaseReq = false;
 let upperCaseReq = false;
 let numericReq = false;
@@ -37,7 +32,8 @@ let passwordJ = false;
 let longStringName = "";
 let passwordLength = "";
 
-function lengthGet(){
+//function to prompt user for how long they want their password to be. This returns a number that becomes the length of the password
+function lengthGet(x){
   passwordLength = prompt("Choose password length. \n (It must be between 8 and 128 characters.)")
   if(isNaN(passwordLength)){
     alert("That is not a number");
@@ -47,8 +43,12 @@ function lengthGet(){
     alert("You must have between 8 and 128 characters.");
     return generatePassword();
   }
+  else{
+    return x;
+  }
 }
 
+//This function adds the characters requested to a string. The string is returned to be used for generating the random password
 function stringGet(){
   longStringName = "";
   lowerCaseReq = confirm("Do you require lowercase letters?");
@@ -71,14 +71,13 @@ function stringGet(){
    return longStringName;
   }
 
+  //This funtion ensures at least one type of characters has been selected. It then takes the long string of characters created above and chooses random characters to create a password with the correct number of characters.
 function passGet(x){
-
   if (specialReq === false && numericReq === false && upperCaseReq === false && lowerCaseReq === false) {
     alert("Please choose some kind of character. I recommend choosing them all!");
     return stringGet()
   }
-
-    else {
+      else {
     function passJumb(length, chars) {
       var passwordJ = '';
       for (var i = length; i > 0; --i) passwordJ += chars[Math.floor(Math.random() * chars.length)];
@@ -90,13 +89,12 @@ function passGet(x){
   }
 }
 
+//This function checks to see of each character set selected appears in the password. If not it generates a new password and tests again.
 function passwordRefined(x){
-
   console.log(x);
     if (lowerCaseReq === true && /[a-z]/.test(x) || lowerCaseReq === false){
     console.log("aa");
     }
-
     else {
       console.log("aaaaaaaaaaa")
       y = passGet(longStringName);
@@ -131,134 +129,5 @@ function passwordRefined(x){
       passwordRefined(y);
       return y;   
     }
-   
-   
-
 }
 
-
-
-
-// console.log(x);
-// if (lowerCaseReq === true && /[a-z]/.test(x)){
-// console.log("aa");
-// }
-// else if (lowerCaseReq === false) {
-//   console.log("aaNOTNEEDED");
-// return x;
-// }
-//  else {
-//   console.log("Woooooo")
-//   y = passGet(longStringName);
-//   passwordRefined(y);
-//   return y;
-// }
-
-
-
-
-
-
-
-// console.log(x);
-// if (lowerCaseReq === true && /[a-z]/.test(x)){
-// console.log("aa");
-// return x;
-// }
-// else {
-//   console.log("nup");
-//   x = false;
-//   return x;
-// }
-
-
-
-
-
-
-// if (x = false) {
-//   console.log("Yabba dabba do");
-//   firstPass = passGet(stringP);
-//   refinedPass = passwordRefined(firstPass);
-//   return refinedPass
-// }
-
-// else {
-//   console.log("Tick tock")
-//   return refinedPass
-// }
-
-
-
-        // if (lowerCaseReq === true && /[a-z]/.test(passwordJ)){
-        //   console.log("aa");
-        // }
-        // else {
-        //   alert("Try again");
-        //           }
-        // if (upperCaseReq === true && /[A-Z]/.test(passwordJ)){
-        //   console.log("AB");
-        // }
-
-        // else {
-        //   alert("Try again");
-        //          }
-
-
-        // if (numericReq === true && /[0-9]/.test(passwordJ)){
-        //   console.log("1231232");
-        // }
-
-        // else {
-        //   alert("Try again");
-        //          }
-
-        // if (specialReq === true && /[!@,#$%&*{}]/.test(passwordJ)){
-        //   console.log("!@,#$%&*{}");
-        // }
-        // else {
-        //   alert("Try again");
-        //          }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-//  //This function checks to see if any character is missing 
-
- 
-
-
-
-// function charCheck(pJumb) {
-
-// }
-
-
-
-
-// function charCheck(x) 
-//   var passP = "";
-//   {
-//     if (lowerCaseReq === true && /[a-z]/.test(x)){
-//       console.log("A");
-//     }
-//     else if (upperCaseReq === true && /[A-Z]/.test(x)){
-//       console.log("B");
-//     }
-//     else if (numericReq === true && /[0-9]/.test(x)){
-//     console.log("C");
-  
-//   }
-// else {
-//   console.log("Try again");
-// }
-// }
