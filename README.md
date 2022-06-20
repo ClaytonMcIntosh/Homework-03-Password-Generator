@@ -1,4 +1,4 @@
-# Homework-03-Password Generator
+# Password Generator
 
 ## Task
 
